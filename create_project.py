@@ -112,6 +112,9 @@ def main(name: str, tests: bool) -> None:
         tests_dir = project_folder / "tests"
         tests_dir.mkdir(exist_ok=True)
         (tests_dir / "__init__.py").touch()
+        create_file(
+            project_folder, "requirements-test.txt", "pytest\npytest-cov"
+        )
 
     commands = []
 
